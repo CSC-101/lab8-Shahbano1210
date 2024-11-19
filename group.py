@@ -1,4 +1,6 @@
 # part 1
+from typing import Optional
+
 
 def groups_of_3(nums:list[int])->list[list[int]]:
     newList = []
@@ -21,4 +23,20 @@ def groups_of_3(nums:list[int])->list[list[int]]:
 
 # part 2
 
-def
+def command_line(file)->Optional[float]:  # takes in a list of the parameters in the configuration and
+    try:
+        open(file)
+        for line in file:
+            parts = line.split()
+            try:
+                for i in line:
+                    float(line[i])
+                print(sum(line))
+            except ValueError:
+                print("Error - missing value")
+    except FileNotFoundError:
+        exit()
+
+
+if __name__ == '__main__':
+    command_line(times)
